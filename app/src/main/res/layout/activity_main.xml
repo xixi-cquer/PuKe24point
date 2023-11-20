@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:layout_marginBottom="10dp"
+        android:text="扑克牌计算24点" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/card1"
+            android:layout_width="70sp"
+            android:layout_height="90sp"
+            android:background="@drawable/back"
+            />
+
+        <ImageButton
+            android:id="@+id/card2"
+            android:layout_width="70sp"
+            android:layout_height="90sp"
+            android:background="@drawable/back"
+            />
+
+        <ImageButton
+            android:id="@+id/card3"
+            android:layout_width="70sp"
+            android:layout_height="90sp"
+            android:background="@drawable/back"
+            />
+
+        <ImageButton
+            android:id="@+id/card4"
+            android:layout_width="70sp"
+            android:layout_height="90sp"
+            android:background="@drawable/back"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/buttonClear"
+            android:textSize="30sp"
+            android:text="重新选择"
+            android:onClick="clearCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/buttonCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="getTips"
+            android:text="计算24点"
+            android:textSize="30sp" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+        android:text="请选择4张扑克牌" />
+
+    <FrameLayout
+        android:id="@+id/clubLayout"
+        android:layout_width="match_parent"
+        android:background="@drawable/background"
+        android:padding="5dp"
+        android:layout_height="110dp">
+
+        <ImageButton
+            android:id="@+id/club1"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club1" />
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:id="@+id/club2"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club2" />
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:id="@+id/club3"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="40dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club3" />
+        <ImageButton
+            android:id="@+id/club4"
+            android:layout_gravity="bottom"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="60dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club4" />
+        <ImageButton
+            android:id="@+id/club5"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="80dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club5" />
+        <ImageButton
+            android:id="@+id/club6"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="100dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club6" />
+        <ImageButton
+            android:id="@+id/club7"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="120dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club7" />
+        <ImageButton
+            android:id="@+id/club8"
+            android:layout_gravity="bottom"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="140dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club8" />
+        <ImageButton
+            android:id="@+id/club9"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="160dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club9" />
+        <ImageButton
+            android:id="@+id/club10"
+            android:layout_width="80dp"
+            android:layout_gravity="bottom"
+            android:layout_height="100dp"
+            android:layout_marginLeft="180dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club10" />
+        <ImageButton
+            android:id="@+id/club11"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="200dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club11" />
+        <ImageButton
+            android:id="@+id/club12"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="220dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club12" />
+
+        <ImageButton
+            android:id="@+id/club13"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="240dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/club13" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/heartlayout"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@drawable/background"
+        android:padding="5dp">
+
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:id="@+id/heart1"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart1" />
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:id="@+id/heart2"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart2" />
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:id="@+id/heart3"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="40dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart3" />
+        <ImageButton
+            android:id="@+id/heart4"
+            android:layout_gravity="bottom"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="60dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart4" />
+        <ImageButton
+            android:id="@+id/heart5"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="80dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart5" />
+        <ImageButton
+            android:id="@+id/heart6"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="100dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart6" />
+        <ImageButton
+            android:id="@+id/heart7"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="120dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart7" />
+        <ImageButton
+            android:id="@+id/heart8"
+            android:layout_gravity="bottom"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="140dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart8" />
+        <ImageButton
+            android:id="@+id/heart9"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="160dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart9" />
+        <ImageButton
+            android:id="@+id/heart10"
+            android:layout_width="80dp"
+            android:layout_gravity="bottom"
+            android:layout_height="100dp"
+            android:layout_marginLeft="180dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart10" />
+        <ImageButton
+            android:id="@+id/heart11"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="200dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart11" />
+        <ImageButton
+            android:id="@+id/heart12"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="220dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart12" />
+        <ImageButton
+            android:id="@+id/heart13"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="240dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/heart13" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/diamondlayout"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@drawable/background"
+        android:padding="6dp">
+
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:id="@+id/diamond1"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond1" />
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:id="@+id/diamond2"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond2" />
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:id="@+id/diamond3"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="40dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond3" />
+        <ImageButton
+            android:id="@+id/diamond4"
+            android:layout_gravity="bottom"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="60dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond4" />
+        <ImageButton
+            android:id="@+id/diamond5"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="80dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond5" />
+        <ImageButton
+            android:id="@+id/diamond6"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="100dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond6" />
+        <ImageButton
+            android:id="@+id/diamond7"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="120dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond7" />
+        <ImageButton
+            android:id="@+id/diamond8"
+            android:layout_gravity="bottom"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="140dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond8" />
+        <ImageButton
+            android:id="@+id/diamond9"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="160dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond9" />
+        <ImageButton
+            android:id="@+id/diamond10"
+            android:layout_width="80dp"
+            android:layout_gravity="bottom"
+            android:layout_height="100dp"
+            android:layout_marginLeft="180dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond10" />
+        <ImageButton
+            android:id="@+id/diamond11"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="200dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond11" />
+        <ImageButton
+            android:id="@+id/diamond12"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="220dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond12" />
+        <ImageButton
+            android:id="@+id/diamond13"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="240dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/diamond13" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/spadelayout"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@drawable/background"
+        android:padding="5dp">
+
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:id="@+id/spade1"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade1" />
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:id="@+id/spade2"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade2" />
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:id="@+id/spade3"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="40dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade3" />
+        <ImageButton
+            android:id="@+id/spade4"
+            android:layout_gravity="bottom"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="60dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade4" />
+        <ImageButton
+            android:id="@+id/spade5"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="80dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade5" />
+        <ImageButton
+            android:id="@+id/spade6"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="100dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade6" />
+        <ImageButton
+            android:id="@+id/spade7"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="120dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade7" />
+        <ImageButton
+            android:id="@+id/spade8"
+            android:layout_gravity="bottom"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="140dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade8" />
+        <ImageButton
+            android:id="@+id/spade9"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="160dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade9" />
+        <ImageButton
+            android:id="@+id/spade10"
+            android:layout_width="80dp"
+            android:layout_gravity="bottom"
+            android:layout_height="100dp"
+            android:layout_marginLeft="180dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade10" />
+        <ImageButton
+            android:id="@+id/spade11"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="200dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade11" />
+        <ImageButton
+            android:id="@+id/spade12"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="220dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade12" />
+        <ImageButton
+            android:id="@+id/spade13"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="240dp"
+            android:scaleType="centerCrop"
+            android:onClick="chooseCard"
+            app:srcCompat="@drawable/spade13" />
+    </FrameLayout>
+
+</LinearLayout>
